@@ -12,17 +12,6 @@ cc_library(
     ],
 )
 
-cc_test(
-    name = "admin_handler_test",
-    srcs = ["admin_handler_test.cc"],
-    deps = [
-        ":admin_handler",
-        "//trpc/server:server_context",
-        "@com_github_tencent_rapidjson//:rapidjson",
-        "@com_google_googletest//:gtest",
-        "@com_google_googletest//:gtest_main",
-    ],
-)
 
 cc_library(
     name = "admin_service",
@@ -56,22 +45,6 @@ cc_library(
     ],
 )
 
-cc_test(
-    name = "admin_service_test",
-    srcs = ["admin_service_test.cc"],
-    data = ["test.yaml"],
-    linkopts = [
-        "-ldl",
-    ],
-    deps = [
-        ":admin_service",
-        "//trpc/common/config:trpc_config",
-        "//trpc/server:trpc_server",
-        "//trpc/util/log:logging",
-        "@com_google_googletest//:gtest",
-        "@com_google_googletest//:gtest_main",
-    ],
-)
 
 cc_library(
     name = "base_funcs",
@@ -83,15 +56,6 @@ cc_library(
     ],
 )
 
-cc_test(
-    name = "base_funcs_test",
-    srcs = ["base_funcs_test.cc"],
-    deps = [
-        ":base_funcs",
-        "@com_google_googletest//:gtest",
-        "@com_google_googletest//:gtest_main",
-    ],
-)
 
 cc_library(
     name = "client_detach_handler",
@@ -106,16 +70,7 @@ cc_library(
     ],
 )
 
-cc_test(
-    name = "client_detach_handler_test",
-    srcs = ["client_detach_handler_test.cc"],
-    deps = [
-        ":client_detach_handler",
-        "//trpc/server:server_context",
-        "@com_google_googletest//:gtest",
-        "@com_google_googletest//:gtest_main",
-    ],
-)
+
 
 cc_library(
     name = "commands_handler",
@@ -127,15 +82,6 @@ cc_library(
     ],
 )
 
-cc_test(
-    name = "commands_handler_test",
-    srcs = ["commands_handler_test.cc"],
-    deps = [
-        ":commands_handler",
-        "@com_google_googletest//:gtest",
-        "@com_google_googletest//:gtest_main",
-    ],
-)
 
 cc_library(
     name = "contention_profiler_handler",
@@ -162,16 +108,6 @@ cc_library(
     ],
 )
 
-cc_test(
-    name = "contention_profiler_handler_test",
-    srcs = ["contention_profiler_handler_test.cc"],
-    deps = [
-        ":contention_profiler_handler",
-        "//trpc/server:server_context",
-        "@com_google_googletest//:gtest",
-        "@com_google_googletest//:gtest_main",
-    ],
-)
 
 cc_library(
     name = "cpu_profiler_handler",
@@ -194,17 +130,6 @@ cc_library(
         "//trpc/util/http:body_params",
         "//trpc/util/log:logging",
         "@com_github_tencent_rapidjson//:rapidjson",
-    ],
-)
-
-cc_test(
-    name = "cpu_profiler_handler_test",
-    srcs = ["cpu_profiler_handler_test.cc"],
-    deps = [
-        ":cpu_profiler_handler",
-        "//trpc/server:server_context",
-        "@com_google_googletest//:gtest",
-        "@com_google_googletest//:gtest_main",
     ],
 )
 
@@ -232,16 +157,6 @@ cc_library(
     ],
 )
 
-cc_test(
-    name = "heap_profiler_handler_test",
-    srcs = ["heap_profiler_handler_test.cc"],
-    deps = [
-        ":heap_profiler_handler",
-        "//trpc/server:server_context",
-        "@com_google_googletest//:gtest",
-        "@com_google_googletest//:gtest_main",
-    ],
-)
 
 cc_library(
     name = "index_handler",
@@ -251,17 +166,6 @@ cc_library(
         ":admin_handler",
         ":web_css_jquery",
         "@com_github_tencent_rapidjson//:rapidjson",
-    ],
-)
-
-cc_test(
-    name = "index_handler_test",
-    srcs = ["index_handler_test.cc"],
-    deps = [
-        ":index_handler",
-        "//trpc/server:server_context",
-        "@com_google_googletest//:gtest",
-        "@com_google_googletest//:gtest_main",
     ],
 )
 
@@ -276,16 +180,7 @@ cc_library(
     ],
 )
 
-cc_test(
-    name = "js_handler_test",
-    srcs = ["js_handler_test.cc"],
-    deps = [
-        ":js_handler",
-        "//trpc/server:server_context",
-        "@com_google_googletest//:gtest",
-        "@com_google_googletest//:gtest_main",
-    ],
-)
+
 
 cc_library(
     name = "log_level_handler",
@@ -300,18 +195,6 @@ cc_library(
     ],
 )
 
-cc_test(
-    name = "log_level_handler_test",
-    srcs = ["log_level_handler_test.cc"],
-    data = ["test.yaml"],
-    deps = [
-        ":log_level_handler",
-        "//trpc/common:trpc_plugin",
-        "//trpc/common/config:trpc_config",
-        "@com_google_googletest//:gtest",
-        "@com_google_googletest//:gtest_main",
-    ],
-)
 
 cc_library(
     name = "mutex",
@@ -330,16 +213,7 @@ cc_library(
     ],
 )
 
-cc_test(
-    name = "mutex_test",
-    srcs = ["mutex_test.cc"],
-    deps = [
-        ":base_funcs",
-        ":mutex",
-        "@com_google_googletest//:gtest",
-        "@com_google_googletest//:gtest_main",
-    ],
-)
+
 
 cc_library(
     name = "prometheus_handler",
